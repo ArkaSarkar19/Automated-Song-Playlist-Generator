@@ -49,9 +49,12 @@ for line in mxm_test_dataset:
 
 # print(len(lyrics))
 
-
-# for i in lyrics:
-# 	print(" song = ", lyrics[i][0][4], " artist  = ", lyrics[i][0][3] )
+list1 = []
+f = open("song_name_song_artist.pkl", "wb")
+for i in lyrics:
+	list1.append((lyrics[i][0][4], lyrics[i][0][3], i))
+pickle.dump(list1, f)
+f.close()
 
 f = open("dataset.pkl" , "wb")
 
@@ -59,13 +62,3 @@ pickle.dump(lyrics,f)
 f.close()
 
 print("Dataset Saved to dataset.pkl")
-
-import pickle
-
-f = open("dataset.pkl" , "rb")
-dict1 = pickle.load(f)
-f.close()
-for key in dict1:
-	print(dict1[key][0][3], dict1[key][0][4])
-
-print(len(dict1))
