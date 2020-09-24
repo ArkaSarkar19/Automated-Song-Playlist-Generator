@@ -40,7 +40,8 @@ for line in f:
 
 			offset += len(results['items'])
 			count = 0
-		# print("\n\n")
+		offset = 0
+	# print("\n\n")
 	except:
 		# print("Error ")
 		# print(playlist_name)
