@@ -20,18 +20,26 @@ for line in f:
 	results = sp.search(q=playlist_name, type='playlist', limit = 1)
 	try :
 		playlist_id = results['playlists']['items'][0]['id']
-		results = sp.playlist_items(playlist_id, limit = 100)
-		# if(i == 1):
-			# break
-		# print(results['items'][0]['track']['id'])
-		for i in range(len(results['items'])):
-			# print(results['items'][i]['track']['id'], end = " ")
+		offset = 0
+		while(1):
+			results = sp.playlist_items(playlist_id, offset = offset, limit = 100)
+			# if(i == 1):
+				# break
+			# print(results['items'][0]['track']['id'])
+			if(len(results['items']) == 0):
+				count = 0
+				break
+			for i in range(len(results['items'])):
+				# print(results['items'][i]['track']['id'], end = " ")
 
-			song_id = results['items'][i]['track']['id']
-			if(song_id in dict_):
-				count+=1
-		print(playlist_name, count,len(results['items']) )
-		count = 0
+				song_id = results['items'][i]['track']['id']
+				# print(song_id, end = " ")
+				if(song_id in dict_):
+					count+=1
+			print(playlist_name, count,len(results['items']) )
+
+			offset += len(results['items'])
+			count = 0
 		# print("\n\n")
 	except:
 		# print("Error ")

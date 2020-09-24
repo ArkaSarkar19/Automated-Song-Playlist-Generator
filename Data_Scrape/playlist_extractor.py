@@ -10,8 +10,9 @@ links_list1 = []
 for line in f:
 	playlist_name = line[:-1]
 	# print(playlist_name)
-
+	print(playlist_name)
 	results = sp.search(q=playlist_name, type='playlist', limit = 1)
+	print((results['playlists']['items'][0]['name'], results['playlists']['items'][0]['external_urls']['spotify']))
 	links_list1.append((results['playlists']['items'][0]['name'], results['playlists']['items'][0]['external_urls']['spotify']))
 	# print(results['playlists']['items'][0]['name'], results['playlists']['items'][0]['external_urls']['spotify'])
 
