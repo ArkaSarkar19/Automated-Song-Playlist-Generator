@@ -1,0 +1,2 @@
+sp_song_id,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,duration_ms,release_date,popularity
+6edQfeOlqbGteYixpJl3Sm,0.857,0.602,10,-8.311,1,0.029,0.489,0.0244,0.317,0.957,105.157,239627,1999-03-01,48

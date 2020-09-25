@@ -1,52 +1,35 @@
+import os
 import pickle
 import spotipy
+import pandas as pd
 from spotipy.oauth2 import SpotifyClientCredentials
 
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="f053486a0d364fe09c5bddf49fc4657e",
                                                            client_secret="701cacd9264046d7889ab46f6f7610a9"))
-f = open("playlist_ids.txt" ,"r")
+f = open("relevant_songs.pkl", "rb")
 
-playlist_list = []
-for line in f:
-	playlist_id, x, y = line.split() 
-	playlist_list.append(playlist_id)
-f.close()
+song_ids = pickle.load(f)
+features = ['sp_song_id','danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness','liveness','valence','tempo', 'duration_ms']
 
-f = open("playlist_names.txt" ,"r")
-dict_ = open("Msd_id_to_spotify_id.pkl", "rb")
-dict_ = pickle.load(dict_)
-dict_ = dict(map(reversed, dict_.items()))
-f.close()
+unlabelled_song_features = []
+for song_id  in song_ids:
 
-song_ids = set()
+	list_ = []
+	results1 = sp.audio_features(song_id)
+	results2 = sp.track(song_id)
+	list_.append(song_id)
+	for feature in features:
+		if(feature!="sp_song_id"):
+			list_.append(results1[0][feature])
 
-for playlist_id in playlist_list:		
-	offset = 0
-	count = 0
-	while(1):
-		results1 = sp.playlist_items(playlist_id, offset = offset, limit = 100)
-		if(len(results1['items']) == 0):
-			break
-		for j in range(len(results1['items'])):
-			try:
-				song_id = results1['items'][j]['track']['id']
-				if(song_id in dict_):
-					count+=1
-					song_ids.add(song_id)
-			except:
-				continue
-		offset += len(results1['items'])
-	print(playlist_id, count,offset)
+	list_.append(results2['album']['release_date'])
+	list_.append(results2['popularity'])
 
-list1 = list(song_ids)
-print(list1)
-print(len(list1))
-
-f = open("relevant_songs.pkl", "wb")
-pickle.dump(list1, f)
-f.close()
+	unlabelled_song_features.append(list_)
 	
-# # 	# print(results['playlists']['items'][i]['name'])
-# 	if count > 50:
-		# print(playlist_id, count,offset)
+	if(len(unlabelled_song_features)%100 == 0):
+		print(len(unlabelled_song_features))
 
+df = pd.DataFrame(unlabelled_song_features, columns = ['sp_song_id','danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness','liveness','valence','tempo', 'duration_ms','release_date', 'popularity']) 
+df.to_csv("Dataset/unlabelled_song_features.csv", index = False)
+print(df.head())
