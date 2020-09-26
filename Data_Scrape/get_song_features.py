@@ -17,6 +17,7 @@ for song_id  in song_ids:
 	list_ = []
 	results1 = sp.audio_features(song_id)
 	results2 = sp.track(song_id)
+	print(results2)
 	list_.append(song_id)
 	for feature in features:
 		if(feature!="sp_song_id"):
@@ -26,7 +27,7 @@ for song_id  in song_ids:
 	list_.append(results2['popularity'])
 
 	unlabelled_song_features.append(list_)
-	
+
 	if(len(unlabelled_song_features)%100 == 0):
 		print(len(unlabelled_song_features))
 
