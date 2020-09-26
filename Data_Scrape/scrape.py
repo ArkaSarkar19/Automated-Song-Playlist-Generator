@@ -1,10 +1,10 @@
 import os
 import pickle
 
-maxm_779k_dataset = open("mxm_779k_matches.txt", "r")
-mxm_train_dataset = open("mxm_dataset_train.txt", "r")
-mxm_test_dataset = open("mxm_dataset_test.txt", "r")
-bow = open("BOW.txt", "r")
+maxm_779k_dataset = open("MSD_text_dataset/mxm_779k_matches.txt", "r")
+mxm_train_dataset = open("MSD_text_dataset/mxm_dataset_train.txt", "r")
+mxm_test_dataset = open("MSD_text_dataset/mxm_dataset_test.txt", "r")
+bow = open("MSD_text_dataset/BOW.txt", "r")
 
 # print(maxm_779k_dataset.read())
 
@@ -50,13 +50,13 @@ for line in mxm_test_dataset:
 # print(len(lyrics))
 
 list1 = []
-f = open("song_name_song_artist.pkl", "wb")
+f = open("Pickle_Files/song_name_song_artist.pkl", "wb")
 for i in lyrics:
 	list1.append((lyrics[i][0][4], lyrics[i][0][3], i))
 pickle.dump(list1, f)
 f.close()
 
-f = open("dataset.pkl" , "wb")
+f = open("Pickle_Files/dataset.pkl" , "wb")
 
 pickle.dump(lyrics,f)
 f.close()

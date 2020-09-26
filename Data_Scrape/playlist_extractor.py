@@ -4,7 +4,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="89e3323f79474b3a9de0caf291ba18de",
                                                            client_secret="d0a84797538d4c8c86eed735569a24a5"))
-f = open("playlist_names.txt" ,"r")
+f = open("Playlist_properties/playlist_names.txt" ,"r")
 
 links_list1 = []
 for line in f:
@@ -17,7 +17,7 @@ for line in f:
 	# print(results['playlists']['items'][0]['name'], results['playlists']['items'][0]['external_urls']['spotify'])
 
 links_list2 = []
-f = open("All_playlists_spotify_links.txt", "r")
+f = open("Playlist_properties/All_playlists_spotify_links.txt", "r")
 for line in f:
 	line = line[:-1]
 	question_mark = line.find('?')

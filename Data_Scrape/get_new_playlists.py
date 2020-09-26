@@ -4,10 +4,10 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="f053486a0d364fe09c5bddf49fc4657e",
                                                            client_secret="701cacd9264046d7889ab46f6f7610a9"))
-f = open("playlist_names.txt" ,"r")
+f = open("Playlist_properties/playlist_names.txt" ,"r")
 
-f = open("playlist_names.txt" ,"r")
-dict_ = open("Msd_id_to_spotify_id.pkl", "rb")
+f = open("Playlist_properties/playlist_names.txt" ,"r")
+dict_ = open("Pickle_Files/Msd_id_to_spotify_id.pkl", "rb")
 dict_ = pickle.load(dict_)
 dict_ = dict(map(reversed, dict_.items()))
 

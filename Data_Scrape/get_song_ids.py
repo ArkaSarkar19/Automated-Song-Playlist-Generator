@@ -4,7 +4,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="f053486a0d364fe09c5bddf49fc4657e",
                                                            client_secret="701cacd9264046d7889ab46f6f7610a9"))
-f = open("playlist_ids.txt" ,"r")
+f = open("Playlist_properties/playlist_ids.txt" ,"r")
 
 playlist_list = []
 for line in f:
@@ -12,8 +12,8 @@ for line in f:
 	playlist_list.append(playlist_id)
 f.close()
 
-f = open("playlist_names.txt" ,"r")
-dict_ = open("Msd_id_to_spotify_id.pkl", "rb")
+f = open("Playlist_properties/playlist_names.txt" ,"r")
+dict_ = open("Pickle_Files/Msd_id_to_spotify_id.pkl", "rb")
 dict_ = pickle.load(dict_)
 dict_ = dict(map(reversed, dict_.items()))
 f.close()
@@ -42,7 +42,7 @@ list1 = list(song_ids)
 print(list1)
 print(len(list1))
 
-f = open("relevant_songs.pkl", "wb")
+f = open("Pickle_Files/relevant_songs.pkl", "wb")
 pickle.dump(list1, f)
 f.close()
 	

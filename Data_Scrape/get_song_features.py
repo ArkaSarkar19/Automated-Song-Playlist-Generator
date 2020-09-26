@@ -6,7 +6,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="f053486a0d364fe09c5bddf49fc4657e",
                                                            client_secret="701cacd9264046d7889ab46f6f7610a9"))
-f = open("relevant_songs.pkl", "rb")
+f = open("Pickle_Files/relevant_songs.pkl", "rb")
 
 song_ids = pickle.load(f)
 features = ['sp_song_id','danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness','liveness','valence','tempo', 'duration_ms']

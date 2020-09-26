@@ -6,7 +6,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="f053486a0d
                                                            client_secret="701cacd9264046d7889ab46f6f7610a9"))
 
 
-f = open("song_name_song_artist.pkl" , "rb")
+f = open("Pickle_Files/song_name_song_artist.pkl" , "rb")
 list1 = pickle.load(f)
 f.close()
 
@@ -26,7 +26,7 @@ for i in range(80000):
 		print("ERROR")
 
 # print(dict1)
-f = open("Msd_id_to_spotify_id_0-80000", "wb")
+f = open("Pickle_Files/Msd_id_to_spotify_id_0-80000.pkl", "wb")
 pickle.dump(dict1, f)
 f.close()
 

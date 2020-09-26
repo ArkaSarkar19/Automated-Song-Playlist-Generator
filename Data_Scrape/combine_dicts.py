@@ -1,9 +1,9 @@
 import os
 import pickle
 
-f1 = open("Msd_id_to_spotify_id_0-80000.pkl", "rb")
-f2 = open("Msd_id_to_spotify_id_80000_to_160000.pkl", "rb")
-f3 = open("Msd_id_to_spotify_id_160k_end.pkl", "rb")
+f1 = open("Pickle_Files/Msd_id_to_spotify_id_0-80000.pkl", "rb")
+f2 = open("Pickle_Files/Msd_id_to_spotify_id_80000_to_160000.pkl", "rb")
+f3 = open("Pickle_Files/Msd_id_to_spotify_id_160k_end.pkl", "rb")
 
 dict_1 = pickle.load(f1)
 dict_2 = pickle.load(f2)
@@ -21,7 +21,7 @@ f2.close()
 f3.close()
 # print(len(dict_1))
 
-save_file = open("Msd_id_to_spotify_id.pkl", "wb")
+save_file = open("Pickle_Files/Msd_id_to_spotify_id.pkl", "wb")
 
 pickle.dump(dict_1, save_file)
 save_file.close()

@@ -1,7 +1,7 @@
 
 
 
-f = open("All_playlists_spotify_links.txt", "r")
+f = open("Playlist_properties/All_playlists_spotify_links.txt", "r")
 for line in f:
 	line = line[:-1]
 	question_mark = line.find('?')
