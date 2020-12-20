@@ -1,5 +1,5 @@
 # Personalised-Song-Playlist-Generator
-by **Arka Sarkar, Pankil Kalra and Daksh Thapar** from **Indraprastha Institute of Information Technology, Delhi**. 
+by **Arka Sarkar, Pankil Kalra and Daksh Thapar, Machine Learning (CSE343, ECE343)** from **Indraprastha Institute of Information Technology, Delhi**. 
 
 ### Introduction 
 With the growing popularity of music streaming services like Spotify, Apple Music and Wynk, the number of songs have skyrocketed globally. Creating personalized playlists for users has become tedious and challenging as it involves individual listening to various songs and categorizing them based on their audio features. The objective is to sort songs with similar musical characteristics into playlists  automatically. Modern machine learning techniques and visualization tools should help us find accurate models that categorize millions of songs into user playlists based on song choices. Related works on this problem did not consider Lyrical Analysis while making playlists. We are using Topic Modelling techniques on lyrics, and will be using the extracted topics as a feature for generating playlists.
@@ -95,4 +95,4 @@ Pankil Kalra (pankil18061@iiitd.ac.in) </br>
 Daksh Thapar (daksh18137@iiitd.ac.in) </br>
 Arka Sarkar (arka18222@iiitd.ac.in) </br>
 
-Machine Learning- CSE343, ECE343
+
