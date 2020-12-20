@@ -91,6 +91,6 @@ The models pickles are saved in "rb" format in their respeective directories (\m
 ### Contact 
 For any furhter queries feel free to reach out the following contributors. 
 
-Pankil Kalra (pankil18061@iiitd.ac.in) <\br>
-Daksh Thapar (daksh137@iiitd.ac.in) <\br>
-Arka Sarkar (arka18222@iiitd.ac.in) <\br>
+Pankil Kalra (pankil18061@iiitd.ac.in) </br>
+Daksh Thapar (daksh137@iiitd.ac.in) </br>
+Arka Sarkar (arka18222@iiitd.ac.in) </br>
