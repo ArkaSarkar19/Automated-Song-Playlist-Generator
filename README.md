@@ -94,3 +94,5 @@ For any furhter queries feel free to reach out the following contributors.
 Pankil Kalra (pankil18061@iiitd.ac.in) </br>
 Daksh Thapar (daksh18137@iiitd.ac.in) </br>
 Arka Sarkar (arka18222@iiitd.ac.in) </br>
+
+Machine Learning- CSE343, ECE343
