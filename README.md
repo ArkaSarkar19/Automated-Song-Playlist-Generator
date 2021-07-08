@@ -96,3 +96,12 @@ Daksh Thapar (daksh18137@iiitd.ac.in) </br>
 Arka Sarkar (arka18222@iiitd.ac.in) </br>
 
 
+
+## Final Report 
+![1](FinalReport/Report_Images/1.jpg)
+![2](FinalReport/Report_Images/2.jpg)
+![3](FinalReport/Report_Images/3.jpg)
+![4](FinalReport/Report_Images/4.jpg)
+![5](FinalReport/Report_Images/5.jpg)
+![6](FinalReport/Report_Images/6.jpg)
+
